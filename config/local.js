@@ -6,7 +6,7 @@ exports.config = {
         /*
          * Admin api key to access all the reciter endpoint. If you did not setup security in your reciter APIs then leave it empty.
          */ 
-        adminApiKey: 'ADMIN_API_KEY',
+        adminApiKey: 'admin',
         /**
          * This is where you specify all the Identity endpoints in reciter. Please refer to the Identity controller in swagger-ui for all the related
          * Identity endpoints.
@@ -15,12 +15,12 @@ exports.config = {
             /**
              * This endpoint get Identity based on supplied unique id.
              */
-            identityByUid: 'https://reciter.medicine.iu.edu/reciter/find/identity/by/uid',
+            identityByUid: 'http://iu-reciter.us-east-2.elasticbeanstalk.com/reciter/find/identity/by/uid',
             /**
              * This endpoint get all identity listed in your database. This API consumes significant resources when making a call.
              * So when in /search page refrain from refreshing the page since that entails a fresh api call.
              */
-            getAllIdentity: 'https://reciter.medicine.iu.edu/reciter/find/all/identity',
+            getAllIdentity: 'http://iu-reciter.us-east-2.elasticbeanstalk.com/reciter/find/all/identity',
             /**
              * This is the image that is shown in the search page and the Individual page. If you have an api that serves image for each of your identity
              * then specify it here. Otherwise if its blank it uses a stock image specified.
@@ -31,7 +31,7 @@ exports.config = {
          * This is the api to fetch all the publication related to an individual with all the eivdence.
          */
         featureGenerator: {
-            featureGeneratorEndpoint: 'https://reciter.medicine.iu.edu/reciter/feature-generator/by/uid',
+            featureGeneratorEndpoint: 'http://iu-reciter.us-east-2.elasticbeanstalk.com/reciter/feature-generator/by/uid',
             featutreGeneratorApiParams: {
                 /**
                  * This is the minimum score that the publication will be filtered on.
@@ -64,19 +64,19 @@ exports.config = {
         /**
          * This is the endpoint in ReCiter-Publication-Manager controller for authentication.
          */
-        reciterPubManagerAuthenticationEndpoint: 'https://reciter.medicine.iu.edu/reciter/publication/manager/authenticate',
+        reciterPubManagerAuthenticationEndpoint: 'http://iu-reciter.us-east-2.elasticbeanstalk.com/reciter/publication/manager/authenticate',
         /**
          * This endpoint is to update the feedback for users.
          */
-        reciterUpdateGoldStandardEndpoint: 'https://reciter.medicine.iu.edu/reciter/goldstandard',
+        reciterUpdateGoldStandardEndpoint: 'http://iu-reciter.us-east-2.elasticbeanstalk.com/reciter/goldstandard',
         /**
          * This endpoints serves to do CRUD on user feedback. This is used to track the publication feedback in the application. When refreshed
          * the feedback is erased from the database.
          */
         reciterUserFeedbackEndpoints: {
-            saveUserFeedback: 'https://reciter.medicine.iu.edu/reciter/publication/manager/userfeedback/save',
-            deleteUserFeedback: 'https://reciter.medicine.iu.edu/reciter/publication/manager/userfeedback/delete',
-            findUserFeedback: 'https://reciter.medicine.iu.edu/reciter/publication/manager/userfeedback/find'
+            saveUserFeedback: 'http://iu-reciter.us-east-2.elasticbeanstalk.com/reciter/publication/manager/userfeedback/save',
+            deleteUserFeedback: 'http://iu-reciter.us-east-2.elasticbeanstalk.com/reciter/publication/manager/userfeedback/delete',
+            findUserFeedback: 'http://iu-reciter.us-east-2.elasticbeanstalk.com/reciter/publication/manager/userfeedback/find'
         }
     },
     /**
@@ -84,8 +84,8 @@ exports.config = {
      * for details.
      */
     reciterPubmed: {
-        searchPubmedEndpoint: 'https://reciter.medicine.iu.edu/pubmed/query-complex/',
-        searchPubmedCountEndpoint: 'https://reciter.medicine.iu.edu/pubmed/query-number-pubmed-articles/'
+        searchPubmedEndpoint: 'http://iu-reciter-pubmed.us-east-2.elasticbeanstalk.com/pubmed/query-complex/',
+        searchPubmedCountEndpoint: 'http://iu-reciter-pubmed.us-east-2.elasticbeanstalk.com/pubmed/query-number-pubmed-articles/'
     },
     /**
      * ReCiter-Publication-Manager uses Json web token for session management and validating a valid sesssion. This secret will be used to sign the web token.
